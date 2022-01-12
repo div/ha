@@ -6,14 +6,8 @@
     platform: state
     entity_id: input_boolean.occupancy
     to: "on"
-  condition:
-    condition: and
-    conditions:
-    - condition: state
-      entity_id: 'input_boolean.heating_override_switch'
-      state: 'off'
-    - condition: template
-      value_template: "{{ ( as_timestamp(now()) - as_timestamp(state_attr('automation.heating_on_when_leave_home', 'last_triggered')) | int(0) ) > 1800 }}"
+  condition: template
+    value_template: "{{ ( as_timestamp(now()) - as_timestamp(state_attr('automation.heating_on_when_leave_home', 'last_triggered')) | int(0) ) > 1800 }}"
   action:
   - service: climate.set_preset_mode
     data:
@@ -29,14 +23,8 @@
     platform: state
     entity_id: input_boolean.occupancy
     to: "off"
-  condition:
-    condition: and
-    conditions:
-    - condition: state
-      entity_id: 'input_boolean.heating_override_switch'
-      state: 'off'
-    - condition: template
-      value_template: "{{ ( as_timestamp(now()) - as_timestamp(state_attr('automation.heating_off_when_get_home', 'last_triggered')) | int(0) ) > 1800 }}"
+  condition: template
+    value_template: "{{ ( as_timestamp(now()) - as_timestamp(state_attr('automation.heating_off_when_get_home', 'last_triggered')) | int(0) ) > 1800 }}"
   action:
   - service: climate.set_preset_mode
     data:
@@ -45,4 +33,3 @@
   - service: input_boolean.turn_off
     data:
       entity_id: 'input_boolean.heating_timer_switch'
-
