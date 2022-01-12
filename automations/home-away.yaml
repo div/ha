@@ -6,7 +6,8 @@
     platform: state
     entity_id: input_boolean.occupancy
     to: "on"
-  condition: template
+  condition:
+    condition: template
     value_template: "{{ ( as_timestamp(now()) - as_timestamp(state_attr('automation.heating_on_when_leave_home', 'last_triggered')) | int(0) ) > 1800 }}"
   action:
   - service: climate.set_preset_mode
@@ -23,7 +24,8 @@
     platform: state
     entity_id: input_boolean.occupancy
     to: "off"
-  condition: template
+  condition:
+    condition: template
     value_template: "{{ ( as_timestamp(now()) - as_timestamp(state_attr('automation.heating_off_when_get_home', 'last_triggered')) | int(0) ) > 1800 }}"
   action:
   - service: climate.set_preset_mode
