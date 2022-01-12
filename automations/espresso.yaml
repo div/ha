@@ -1,5 +1,5 @@
-- id: espresso_warmup_timer
-  alias: Timer for espresso machine to warmup
+- id: espresso_timers_on
+  alias: Start timers for espresso machine
   trigger:
   - platform: state
     entity_id: switch.switch.lumi_lumi_plug_mmeu01_on_off
@@ -11,3 +11,29 @@
   - service: timer.start
     target:
       entity_id: timer.espresso_machine_stale
+
+- id: espresso_timers_off
+  alias: Stop timers for espresso machine
+  trigger:
+  - platform: state
+    entity_id: switch.switch.lumi_lumi_plug_mmeu01_on_off
+    to: "off"
+  action:
+  - service: timer.cancel
+    target:
+      entity_id: timer.espresso_machine_warmup
+  - service: timer.cancel
+    target:
+      entity_id: timer.espresso_machine_stale
+
+- alias: Warmed up
+  id: espresso_machine_warmed_up
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.espresso_machine_warmup
+  action:
+  - service: notify.mobile_app_iphone_se_2nd_generation
+    data:
+      message: "Espresso machine has warmed up!"
