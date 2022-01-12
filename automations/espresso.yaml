@@ -36,4 +36,9 @@
   action:
     service: notify.mobile_app_iphone_se_2nd_generation
     data:
-      message: "Espresso machine has warmed up!"
+      title: "Espresso machine"
+      message: "Warmed up!"
+      data:
+        subtitle: "Subtitle goes here"
+        group: "esspresso-notification-group"
+        tag: "esspresso-notification-tag"
