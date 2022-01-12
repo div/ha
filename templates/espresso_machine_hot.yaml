@@ -2,4 +2,4 @@
   - name: "Espresso machine is hot"
     delay_on: 00:00:10
     delay_off: 00:00:10
-    state: {{ is_state('switch.lumi_lumi_plug_mmeu01_on_off', 'on') }}
+    state: "{{ is_state('switch.lumi_lumi_plug_mmeu01_on_off', 'on') }}"
