@@ -2,7 +2,7 @@
   alias: Start timers for espresso machine
   trigger:
     platform: state
-    entity_id: switch.switch.lumi_lumi_plug_mmeu01_on_off
+    entity_id: switch.lumi_lumi_plug_mmeu01_on_off
     to: "on"
   action:
   - service: timer.start
@@ -16,7 +16,7 @@
   alias: Stop timers for espresso machine
   trigger:
     platform: state
-    entity_id: switch.switch.lumi_lumi_plug_mmeu01_on_off
+    entity_id: switch.lumi_lumi_plug_mmeu01_on_off
     to: "off"
   action:
   - service: timer.cancel
