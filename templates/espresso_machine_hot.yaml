@@ -1,5 +1,5 @@
 - binary_sensor:
-  - id: espresso_machine_is_hot
+  - unique_id: espresso_machine_is_hot
     name: "Espresso machine is hot"
     delay_on: 00:00:10
     delay_off: 00:00:10
