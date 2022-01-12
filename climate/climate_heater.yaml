@@ -3,7 +3,7 @@
     heater: switch.heater_switch
     target_sensor: sensor.average_temperature
     min_temp: 16
-    max_temp: 24
+    max_temp: 22
     cold_tolerance: 0.5
     hot_tolerance: 0.0
     away_temp: 16 # has to be set from here
@@ -11,4 +11,3 @@
     initial_hvac_mode: "heat"
     min_cycle_duration:
       minutes: 10
-

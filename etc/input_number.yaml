@@ -22,11 +22,3 @@ heating_temp_night:
   max: 22
   step: 0.5
   icon: mdi:home-thermometer-outline
-heating_temp_override:
-  name: Override temp
-  min: 14
-  max: 26
-  step: 0.5
-  icon: mdi:home-thermometer-outline
-
-

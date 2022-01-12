@@ -1,0 +1,4 @@
+- platform: workday
+  country: ES
+  add_holidays:
+    - '2022-01-01' #newyear
