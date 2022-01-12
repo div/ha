@@ -26,8 +26,8 @@
     target:
       entity_id: timer.espresso_machine_stale
 
-- alias: Warmed up
-  id: espresso_machine_warmed_up
+- id: espresso_machine_warmed_up
+  alias: Warmed up
   trigger:
   - platform: event
     event_type: timer.finished
