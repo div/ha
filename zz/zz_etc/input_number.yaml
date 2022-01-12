@@ -1,0 +1,32 @@
+heating_temp_morning:
+  name: Morning
+  min: 18
+  max: 22
+  step: 0.5
+  icon: mdi:home-thermometer-outline
+heating_temp_day:
+  name: Daytime
+  min: 18
+  max: 22
+  step: 0.5
+  icon: mdi:home-thermometer-outline
+heating_temp_evening:
+  name: Evening
+  min: 18
+  max: 22
+  step: 0.5
+  icon: mdi:home-thermometer-outline
+heating_temp_night:
+  name: Nighttime
+  min: 18
+  max: 22
+  step: 0.5
+  icon: mdi:home-thermometer-outline
+heating_temp_override:
+  name: Override temp
+  min: 14
+  max: 26
+  step: 0.5
+  icon: mdi:home-thermometer-outline
+
+

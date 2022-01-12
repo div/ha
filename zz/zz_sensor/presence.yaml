@@ -1,0 +1,30 @@
+
+  - platform: mqtt
+    state_topic: 'monitor/raspberrypi/div'
+    value_template: '{{ value_json.confidence }}'
+    unit_of_measurement: '%'
+    name: 'div iphone'
+    unique_id: div_iphone
+    
+  - platform: mqtt
+    state_topic: 'monitor/raspberrypi/lu'
+    value_template: '{{ value_json.confidence }}'
+    unit_of_measurement: '%'
+    name: 'lu iphone'
+    unique_id: lu_iphone
+    
+  - platform: mqtt
+    state_topic: 'monitor/raspberrypi/kirill'
+    value_template: '{{ value_json.confidence }}'
+    unit_of_measurement: '%'
+    name: 'kirill iphone'
+    unique_id: kirill_iphone
+    
+  - platform: min_max
+    name: "Home Occupancy Confidence"
+    type: max
+    round_digits: 0
+    entity_ids:
+      - sensor.div_iphone
+      - sensor.lu_iphone
+      - sensor.kirill_iphone

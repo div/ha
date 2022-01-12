@@ -1,0 +1,24 @@
+- id: departure_scan
+  alias: Scan for presence when door closes
+#   trigger:
+#   - type: not_opened
+#     platform: device
+#     entity_id: binary_sensor.entrance_door_contact
+#     domain: binary_sensor
+#   condition: []
+  trigger:
+    platform: state
+    entity_id: binary_sensor.entrance_door_contact
+    to: "closed"
+    for: "00:00:05"
+  action:
+#   - delay:
+#       hours: 0
+#       minutes: 0
+#       seconds: 10
+#       milliseconds: 0
+  - service: mqtt.publish
+    data:
+      topic: presence/scan/depart
+      payload: Entrance
+  mode: single
