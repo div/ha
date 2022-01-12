@@ -1,0 +1,3 @@
+resources:
+  - url: /hacsfiles/numberbox-card/numberbox-card.js
+    type: module

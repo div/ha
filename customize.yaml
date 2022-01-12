@@ -1,0 +1,13 @@
+name: Home
+  unit_system: metric
+  # etc
+  customize:
+    # Add an entry for each entity that you want to overwrite.
+    sensor.lumi_lumi_plug_mmeu01_analog_input:
+      unit_of_measurement: "W"
+      device_class: power
+    sensor.lumi_lumi_plug_mmeu01_analog_input_2:
+      unit_of_measurement: "kWh"
+      device_class: energy
+      state_class: measurement
+      last_reset: '1970-01-01T00:00:00+00:00'
