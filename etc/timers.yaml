@@ -1,6 +1,9 @@
 espresso_machine_warmup:
+  name: "Time needed to warmup"
   duration: "00:20:00"
 espresso_machine_stale:
+  name: "Time to turn off the machine"
   duration: "00:50:00"
 espresso_machine_extend:
+  name: "Time to extend machine working"
   duration: "00:10:00"
