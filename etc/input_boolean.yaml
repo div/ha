@@ -1,11 +1,6 @@
 heating_timer_switch:
   name: Heating timer enable
-  icon: mdi:fire
-heating_override_switch:
-  name: Heating override
-  icon: mdi:fire
-  
-
+  icon: mdi:fire  
 occupancy:
   name: Occupancy
   icon: mdi:home
