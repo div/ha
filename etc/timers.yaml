@@ -1,0 +1,6 @@
+espresso_machine_warmup:
+  duration: "00:20:00"
+espresso_machine_stale:
+  duration: "00:50:00"
+espresso_machine_extend:
+  duration: "00:10:00"

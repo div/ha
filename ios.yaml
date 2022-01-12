@@ -1,9 +1,0 @@
-push:
-  categories:
-    - name: "Espresso machine control"
-      identifier: 'espresso_notifications'
-      actions:
-        - identifier: 'TURN_OFF'
-          title: 'Turn machine off'
-        - identifier: 'EXTEND'
-          title: 'Extend for another 10 minutes'

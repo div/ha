@@ -1,0 +1,13 @@
+- id: espresso_warmup_timer
+  alias: Timer for espresso machine to warmup
+  trigger:
+  - platform: state
+    entity_id: switch.switch.lumi_lumi_plug_mmeu01_on_off
+    to: "on"
+  action:
+  - service: timer.start
+    target:
+      entity_id: timer.espresso_machine_warmup
+  - service: timer.start
+    target:
+      entity_id: timer.espresso_machine_stale
