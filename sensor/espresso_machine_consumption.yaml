@@ -1,0 +1,7 @@
+- platform: average
+  name: 'Average Espresso Machine Consumption'
+  unique_id: average_espresso_machine_power
+  entities:
+    - sensor.lumi_lumi_plug_mmeu01_analog_input
+  duration:
+      minutes: 5
