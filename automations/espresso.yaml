@@ -1,6 +1,6 @@
 
 - id: espresso_machine_warmed_up
-  alias: Espresso machine: Notify when warmed up
+  alias: "Espresso machine: Notify when warmed up"
   trigger:
     platform: state
     entity_id: binary_sensor.espresso_machine_is_hot
@@ -16,7 +16,7 @@
         tag: "esspresso-notification-tag"
 
 - id: espresso_machine_stale
-  alias: Espresso machine: start stale timer when hot for long
+  alias: "Espresso machine: start stale timer when hot for long"
   trigger:
     platform: state
     entity_id: switch.espresso_machine_is_stale
@@ -27,7 +27,7 @@
       entity_id: timer.espresso_machine_stale
 
 - id: espresso_turn_off
-  alias: Espresso machine: Cancel timers when turned off
+  alias: "Espresso machine: Cancel timers when turned off"
   trigger:
     platform: state
     entity_id: switch.lumi_lumi_plug_mmeu01_on_off
@@ -79,7 +79,7 @@
 - id: espresso_machine_shutdown_by_notification
   alias: "Espresso machine: Turn off by notification action"
   trigger:
-  - platform: event
+    platform: event
     event_type: mobile_app_notification_action
     event_data:
       action: "ESPRESSO_MACHINE_SHUTDOWN"
@@ -90,7 +90,7 @@
 - id: espresso_machine_extend_by_notification
   alias: "Espresso machine: Extend by notification action"
   trigger:
-  - platform: event
+    platform: event
     event_type: mobile_app_notification_action
     event_data:
       action: "ESPRESSO_MACHINE_EXTEND"
