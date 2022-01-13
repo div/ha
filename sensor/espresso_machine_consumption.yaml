@@ -7,11 +7,11 @@
       minutes: 5
 
 - platform: statistics
-    name: "Espresso Machine Power mean over last 24 hours"
-    entity_id: sensor.lumi_lumi_plug_mmeu01_analog_input
-    state_characteristic: mean
-    max_age:
-      hours: 1
+  name: "Espresso Machine Power mean over last 24 hours"
+  entity_id: sensor.lumi_lumi_plug_mmeu01_analog_input
+  state_characteristic: mean
+  max_age:
+    hours: 1
 
 - platform: statistics
   name: "Espresso Machine Power change over 5 minutes"
