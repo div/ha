@@ -3,22 +3,22 @@
     name: "Espresso machine is hot"
     delay_on: 00:20:00
     delay_off: 00:00:10
-    state: "{{ is_state('switch.lumi_lumi_plug_mmeu01_on_off', 'on') }}"
+    state: "{{ is_state('sensor.espresso_machine_state', 'standby') }}"
 
 - binary_sensor:
   - unique_id: espresso_machine_is_stale
     name: "Espresso machine is stale"
     delay_on: 00:40:00
-    state: "{{ is_state('switch.lumi_lumi_plug_mmeu01_on_off', 'on') }}"
+    state: "{{ is_state('sensor.espresso_machine_state', 'standby') }}"
 
 - sensor:
   - unique_id: espresso_machine_state
     name: "Espresso machine state: heating, standby, off or failure"
     state: >
-      {% set sma = states('sensor.unica_power_sma20') | float %}
+      {% set sma = states('sensor.unica_power_sma10') | float %}
       {% if is_state('switch.lumi_lumi_plug_mmeu01_on_off', 'off') %}
         off
-      {% elif sma < 100 %}
+      {% elif sma < 50 %}
         failure
       {% elif sma < 300 %}
         standby
