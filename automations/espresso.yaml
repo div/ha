@@ -33,9 +33,12 @@
     entity_id: switch.lumi_lumi_plug_mmeu01_on_off
     to: "off"
   action:
-    service: timer.cancel
+  - service: timer.cancel
     target:
       entity_id: timer.espresso_machine_shutdown
+  - service: timer.cancel
+    target:
+      entity_id: timer.espresso_machine_stale
 
 - id: espresso_machine_stale_notification
   alias: "Notifiy that machine is hot for too long"
