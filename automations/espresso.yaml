@@ -16,16 +16,15 @@
         tag: "esspresso-notification-tag"
 
 - id: espresso_machine_stale
-  alias: Start timers for espresso machine
+  alias: Espresso machine is hot for too long
   trigger:
     platform: state
-    entity_id: switch.lumi_lumi_plug_mmeu01_on_off
+    entity_id: switch.espresso_machine_is_stale
     to: "on"
-    for: "00:00:30"
   action:
   - service: timer.start
     target:
-      entity_id: timer.espresso_machine_shutdown
+      entity_id: timer.espresso_machine_stale
   - service: notify.mobile_app_iphone_se_2nd_generation
     data:
       title: "Espresso machine"
@@ -34,10 +33,10 @@
         group: "esspresso-notification-group"
         tag: "esspresso-notification-tag"
         actions:
-        - action: "EXTEND" # The key you are sending for the event
+        - action: "ESPRESSO_MACHINE_EXTEND" # The key you are sending for the event
           title: "Extend for 10m" # The button title
           destructive: true
-        - action: "SHUTDOWN"
+        - action: "ESPRESSO_MACHINE_SHUTDOWN"
           title: "Turn off"
 
 - id: espresso_turn_off
@@ -51,13 +50,49 @@
     target:
       entity_id: timer.espresso_machine_shutdown
 
+- id: espresso_machine_stale_notification
+  alias: "Turn off espresso machine by timer"
+  trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.espresso_machine_stale
+  action:
+  - service: timer.start
+    target:
+      entity_id: timer.espresso_machine_shutdown
+
 - id: espresso_machine_shutdown
   alias: "Turn off espresso machine by timer"
   trigger:
-  - platform: event
+    platform: event
     event_type: timer.finished
     event_data:
       entity_id: timer.espresso_machine_shutdown
   action:
     service: switch.turn_off
     entity_id: switch.lumi_lumi_plug_mmeu01_on_off
+
+- alias: "Turn off espresso machine by notification action"
+  trigger:
+  - platform: event
+    event_type: mobile_app_notification_action
+    event_data:
+      action: "ESPRESSO_MACHINE_SHUTDOWN"
+  action:
+    service: switch.turn_off
+    entity_id: switch.lumi_lumi_plug_mmeu01_on_off
+
+- alias: "Extend espresso machine on by notification action"
+  trigger:
+  - platform: event
+    event_type: mobile_app_notification_action
+    event_data:
+      action: "ESPRESSO_MACHINE_EXTEND"
+  action:
+  - service: timer.cancel
+    target:
+      entity_id: timer.espresso_machine_shutdown
+  - service: timer.start
+    target:
+      entity_id: timer.espresso_machine_stale

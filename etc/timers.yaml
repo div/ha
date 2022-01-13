@@ -1,3 +1,6 @@
 espresso_machine_shutdown:
   name: "Time to turn machine off"
-  duration: "00:00:60"
+  duration: "00:05:00"
+espresso_machine_stale:
+  name: "Time to notify stale"
+  duration: "00:10:00"
