@@ -1,12 +1,12 @@
 - binary_sensor:
   - unique_id: espresso_machine_is_hot
     name: "Espresso machine is hot"
-    delay_on: 00:00:10
+    delay_on: 00:20:00
     delay_off: 00:00:10
     state: "{{ is_state('switch.lumi_lumi_plug_mmeu01_on_off', 'on') }}"
 
 - binary_sensor:
   - unique_id: espresso_machine_is_stale
     name: "Espresso machine is stale"
-    delay_on: 00:00:50
+    delay_on: 00:40:00
     state: "{{ is_state('switch.lumi_lumi_plug_mmeu01_on_off', 'on') }}"
