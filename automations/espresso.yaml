@@ -19,7 +19,7 @@
   alias: "Espresso machine: start stale timer when hot for long"
   trigger:
     platform: state
-    entity_id: switch.espresso_machine_is_stale
+    entity_id: binary_sensor.espresso_machine_is_stale
     to: "on"
   action:
     service: timer.start
