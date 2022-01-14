@@ -15,7 +15,7 @@
   - unique_id: espresso_machine_state
     name: "Espresso machine state: heating, standby, off or failure"
     state: >
-      {% set avg = states('sensor.average_espresso_machine_power_avg10') | float %}
+      {% set avg = states('sensor.unica_power_average10') | float %}
       {% if is_state('switch.lumi_lumi_plug_mmeu01_on_off', 'off') %}
         off
       {% elif avg > 350 %}
