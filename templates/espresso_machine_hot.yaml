@@ -1,14 +1,14 @@
 - binary_sensor:
     unique_id: espresso_machine_is_hot
     name: "Espresso machine is hot"
-    delay_on: 00:01:00
-    delay_off: 00:02:00
+    delay_on: 00:10:00
+    delay_off: 00:10:00
     state: "{{ is_state('sensor.espresso_machine_state', 'standby') }}"
 
 - binary_sensor:
     unique_id: espresso_machine_is_stale
     name: "Espresso machine is stale"
-    delay_on: 00:02:00
+    delay_on: 00:40:00
     state: "{{ is_state('sensor.espresso_machine_state', 'standby') }}"
 
 - sensor:

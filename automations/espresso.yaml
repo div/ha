@@ -26,6 +26,20 @@
     target:
       entity_id: timer.espresso_machine_stale
 
+- id: espresso_machine_active
+  alias: "Espresso machine: cancel stale timer if active"
+  trigger:
+    platform: state
+    entity_id: binary_sensor.espresso_machine_is_stale
+    to: "off"
+  action:
+  - service: timer.cancel
+    target:
+      entity_id: timer.espresso_machine_shutdown
+  - service: timer.cancel
+    target:
+      entity_id: timer.espresso_machine_stale
+
 - id: espresso_turn_off
   alias: "Espresso machine: Cancel timers when turned off"
   trigger:
