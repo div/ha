@@ -1,18 +1,18 @@
 - binary_sensor:
-  - unique_id: espresso_machine_is_hot
+  - entity_id: espresso_machine_is_hot
     name: "Espresso machine is hot"
     delay_on: 00:01:00
     delay_off: 00:00:30
     state: "{{ is_state('sensor.espresso_machine_state', 'standby') }}"
 
 - binary_sensor:
-  - unique_id: espresso_machine_is_stale
+  - entity_id: espresso_machine_is_stale
     name: "Espresso machine is stale"
     delay_on: 00:02:00
     state: "{{ is_state('sensor.espresso_machine_state', 'standby') }}"
 
 - sensor:
-  - unique_id: espresso_machine_state
+  - entity_id: sensor.espresso_machine_state_heating_standby_off_or_failure
     name: "Unica state"
     state: >
       {% set avg = states('sensor.unica_power_average10') | float %}
