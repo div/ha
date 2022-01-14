@@ -11,3 +11,16 @@
       topic: presence/scan/depart
       payload: Entrance
   mode: single
+
+- id: arrival_scan
+  alias: Scan for presence when door opens
+  trigger:
+    platform: state
+    entity_id: binary_sensor.entrance_door_contact
+    to: "open"
+  action:
+  - service: mqtt.publish
+    data:
+      topic: presence/scan/arrive
+      payload: Entrance
+  mode: single
