@@ -1,6 +1,6 @@
 - platform: average
   name: 'Unica Power: Average5'
-  unique_id: average_espresso_machine_power
+  unique_id: average_espresso_machine_power_avg5
   entities:
     - sensor.lumi_lumi_plug_mmeu01_analog_input
   duration:
@@ -16,53 +16,8 @@
 
 - platform: average
   name: 'Unica Power: Average20'
-  unique_id: average_espresso_machine_power_avg10
+  unique_id: average_espresso_machine_power_avg20
   entities:
     - sensor.lumi_lumi_plug_mmeu01_analog_input
   duration:
     minutes: 20
-
-- platform: statistics
-  name: "Unica Power: mean5"
-  entity_id: sensor.lumi_lumi_plug_mmeu01_analog_input
-  state_characteristic: mean
-  max_age:
-    minutes: 5
-
-- platform: statistics
-  name: "Unica Power: mean10"
-  entity_id: sensor.lumi_lumi_plug_mmeu01_analog_input
-  state_characteristic: mean
-  max_age:
-    minutes: 10
-
-- platform: statistics
-  name: "Unica Power: mean20"
-  entity_id: sensor.lumi_lumi_plug_mmeu01_analog_input
-  state_characteristic: mean
-  max_age:
-    minutes: 20
-
-- platform: filter
-  name: "Unica Power SMA5"
-  entity_id: sensor.lumi_lumi_plug_mmeu01_analog_input
-  filters:
-    - filter: time_simple_moving_average
-      window_size: "00:05"
-      precision: 0
-
-- platform: filter
-  name: "Unica Power SMA10"
-  entity_id: sensor.lumi_lumi_plug_mmeu01_analog_input
-  filters:
-    - filter: time_simple_moving_average
-      window_size: "00:10"
-      precision: 0
-
-- platform: filter
-  name: "Unica Power SMA20"
-  entity_id: sensor.lumi_lumi_plug_mmeu01_analog_input
-  filters:
-    - filter: time_simple_moving_average
-      window_size: "00:20"
-      precision: 0
