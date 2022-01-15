@@ -1,5 +1,5 @@
 - id: departure_scan
-  alias: Scan for presence when door closes
+  alias: Presence: Scan when door closes
   trigger:
     platform: state
     entity_id: binary_sensor.entrance_door_contact
@@ -13,7 +13,7 @@
   mode: single
 
 - id: arrival_scan
-  alias: Scan for presence when door opens
+  alias: Presence: Scan when door opens
   trigger:
     platform: state
     entity_id: binary_sensor.entrance_door_contact
