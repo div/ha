@@ -3,7 +3,7 @@
   trigger:
     platform: state
     entity_id: binary_sensor.entrance_door_contact
-    to: "closed"
+    to: "off"
     for: "00:00:05"
   action:
     service: mqtt.publish
@@ -17,7 +17,7 @@
   trigger:
     platform: state
     entity_id: binary_sensor.entrance_door_contact
-    to: "open"
+    to: "on"
   action:
     service: mqtt.publish
     data:
