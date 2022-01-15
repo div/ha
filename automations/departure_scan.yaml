@@ -9,7 +9,7 @@
   action:
     service: mqtt.publish
     data:
-      topic: presence/scan/depart
+      topic: monitor/scan/arrive
       payload: Entrance
   mode: single
 
@@ -22,6 +22,6 @@
   action:
     service: mqtt.publish
     data:
-      topic: presence/scan/arrive
+      topic: monitor/scan/arrive
       payload: Entrance
   mode: single
