@@ -1,26 +1,26 @@
 
 - id: departure_scan
-  alias: Presence: Scan when door closes
+  alias: "Presence: Scan when door closes"
   trigger:
     platform: state
     entity_id: binary_sensor.entrance_door_contact
     to: "off"
     for: "00:00:05"
   action:
-  - service: mqtt.publish
+    service: mqtt.publish
     data:
       topic: presence/scan/depart
       payload: Entrance
   mode: single
 
 - id: arrival_scan
-  alias: Presence: Scan when door opens
+  alias: "Presence: Scan when door opens"
   trigger:
     platform: state
     entity_id: binary_sensor.entrance_door_contact
     to: "on"
   action:
-  - service: mqtt.publish
+    service: mqtt.publish
     data:
       topic: presence/scan/arrive
       payload: Entrance
