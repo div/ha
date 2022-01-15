@@ -6,7 +6,7 @@
     to: "closed"
     for: "00:00:05"
   action:
-  - service: mqtt.publish
+    service: mqtt.publish
     data:
       topic: presence/scan/depart
       payload: Entrance
@@ -19,7 +19,7 @@
     entity_id: binary_sensor.entrance_door_contact
     to: "open"
   action:
-  - service: mqtt.publish
+    service: mqtt.publish
     data:
       topic: presence/scan/arrive
       payload: Entrance
