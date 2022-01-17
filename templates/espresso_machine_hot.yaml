@@ -2,7 +2,7 @@
     unique_id: espresso_machine_is_hot
     name: "Espresso machine is hot"
     delay_off:
-      minutes: 10
+      minutes: 1
     delay_on:
       minutes: 10
     state: "{{ is_state('sensor.espresso_machine_state', 'standby') }}"
