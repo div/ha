@@ -1,20 +1,23 @@
 - platform: average
-  sensors:
-    unica_power_avg5:
-      name: 'Unica Power: Average5'
-      entities:
-        - sensor.lumi_lumi_plug_mmeu01_analog_input
-      duration:
-        minutes: 5
-    unica_power_avg10:
-      name: 'Unica Power: Average10'
-      entities:
-        - sensor.lumi_lumi_plug_mmeu01_analog_input
-      duration:
-        minutes: 10
-    unica_power_avg20:
-      name: 'Unica Power: Average20'
-      entities:
-        - sensor.lumi_lumi_plug_mmeu01_analog_input
-      duration:
-        minutes: 20
+  name: 'Unica Power: Average5'
+  unique_id: unica_power_avg5
+  entities:
+    - sensor.lumi_lumi_plug_mmeu01_analog_input
+  duration:
+    minutes: 5
+
+- platform: average
+  name: 'Unica Power: Average10'
+  unique_id: unica_power_avg10
+  entities:
+    - sensor.lumi_lumi_plug_mmeu01_analog_input
+  duration:
+    minutes: 10
+
+- platform: average
+  name: 'Unica Power: Average20'
+  unique_id: unica_power_avg20
+  entities:
+    - sensor.lumi_lumi_plug_mmeu01_analog_input
+  duration:
+    minutes: 20
