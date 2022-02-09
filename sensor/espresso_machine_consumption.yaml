@@ -1,5 +1,6 @@
 - platform: average
   name: 'Unica Power: Average5'
+  unique_id: unica_power_avg5
   entities:
     - sensor.lumi_lumi_plug_mmeu01_analog_input
   duration:
@@ -7,6 +8,7 @@
 
 - platform: average
   name: 'Unica Power: Average10'
+  unique_id: unica_power_avg10
   entities:
     - sensor.lumi_lumi_plug_mmeu01_analog_input
   duration:
@@ -14,6 +16,7 @@
 
 - platform: average
   name: 'Unica Power: Average20'
+  unique_id: unica_power_avg20
   entities:
     - sensor.lumi_lumi_plug_mmeu01_analog_input
   duration:
