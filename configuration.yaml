@@ -5,5 +5,5 @@ binary_sensor: !include_dir_merge_list binary/
 input_datetime: !include etc/input_datetime.yaml
 input_boolean: !include etc/input_boolean.yaml
 input_number: !include etc/input_number.yaml
-# fan: !include etc/fan.yaml
+fan: !include etc/fan.yaml
  
