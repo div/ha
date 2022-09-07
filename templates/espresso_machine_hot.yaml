@@ -18,7 +18,7 @@
     unique_id: espresso_machine_state
     name: "Unica state"
     state: >
-      {% set avg = states('sensor.unica_power_avg10') | default(0) | float %}
+      {% set avg = states('sensor.unica_power_avg10') | float(0) %}
       {% if is_state('switch.lumi_lumi_plug_mmeu01_on_off', 'off') %}
         off
       {% elif avg > 350 %}
