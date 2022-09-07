@@ -1,0 +1,34 @@
+- id: bedroom_fan_on
+    alias: Bedroom Fan On
+    trigger:
+      - platform: state
+        entity_id: sensor.bedroom_temperature
+      - platform: state
+        entity_id: input_boolean.occupancy
+        to: 'on'
+      - platform: time
+        at: '00:00:00'
+    condition:
+      condition: and
+      conditions:
+        - condition: time
+          after: '00:00:00'
+          before: '10:00:00'
+        - condition: numeric_state
+          entity_id: sensor.bedroom_temperature
+          above: 26
+        - condition: state
+          entity_id: group.family_presence
+          state: 'on'
+    action:
+      - service: fan.set_percentage
+        entity_id: fan.xiaomi_smart_fan
+        data:
+          percentage: >
+            {% set temp = states('sensor.bedroom_temperature') | float %}
+            {% if temp < 28 %} 25
+            {% elif temp < 30 %} 50
+            {% else %} 75
+            {% endif %}
+            
+      
