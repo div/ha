@@ -1,4 +1,4 @@
   - platform: xiaomi_miio_fan
     name: Xiaomi Smart Fan
     host: 192.168.1.110
-    token: 9512a2e9a4c8fb41913b15abf1639dd3
+    token: !secret xiaomi_fan_token
