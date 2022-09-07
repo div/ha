@@ -1,4 +1,6 @@
   - platform: xiaomi_miio_fan
     name: Xiaomi Smart Fan
+    model: dmaker.fan.p18
+    preset_modes_override: []
     host: 192.168.1.110
     token: !secret xiaomi_fan_token
