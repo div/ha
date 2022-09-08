@@ -50,7 +50,7 @@
         entity_id: sensor.bedroom_temperature
         below: 26
       - condition: state
-        entity_id: group.family_presence
+        entity_id: input_boolean.occupancy
         state: 'off'
   action:
     - service: fan.turn_off
