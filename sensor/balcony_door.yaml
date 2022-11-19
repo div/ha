@@ -1,0 +1,16 @@
+- platform: average
+  name: 'Balcony door: Average10'
+  unique_id: balcony_door_avg10
+  entities:
+    - binary_sensor.balcony_door_contact
+  duration:
+    minutes: 10
+
+- platform: statistics
+  unique_id: balcony_door_avg10_v2
+  name: 'Balcony door: Average10 v2'
+  entity_id: binary_sensor.balcony_door_contact
+  state_characteristic: average_step
+  max_age:
+    minutes: 10
+  precision: 1
