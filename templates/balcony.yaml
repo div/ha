@@ -1,0 +1,8 @@
+- binary_sensor:
+    unique_id: balcony_mostly_open
+    name: "Balcony door is open for most of the time recently"
+    # delay_off:
+    #   minutes: 1
+    # delay_on:
+    #   minutes: 10
+    state: "{{ state('sensor.balcony_door_avg10') > 0.5 }}"
