@@ -3,3 +3,5 @@
   name: 'Balcony door: Average10 v2'
   entity_id: binary_sensor.balcony_door_contact
   state_characteristic: average_step
+  max_age:
+    minutes: 10
