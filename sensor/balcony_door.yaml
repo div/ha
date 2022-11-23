@@ -5,3 +5,11 @@
   state_characteristic: average_step
   max_age:
     minutes: 10
+
+
+- platform: filter
+  name: "Balcony door: Moving Average10"
+  entity_id: binary_sensor.balcony_door_contact
+  filters:
+    - filter: time_simple_moving_average
+      window_size: "00:10:00"
