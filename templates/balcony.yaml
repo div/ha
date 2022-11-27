@@ -9,9 +9,9 @@
 
 
 - trigger:
-      - platform: time_pattern
-        # This will update every 1 min
-        minutes: "/1"
+  - platform: time_pattern
+    # This will update every 1 min
+    minutes: "/1"
     sensor:
       - name: "Balcony door every minute report"
         unique_id: balcony_door_every_minute_report
