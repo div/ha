@@ -15,4 +15,4 @@
     sensor:
       - name: "Balcony door every minute report"
         unique_id: balcony_door_every_minute_report
-        state: {{ states('binary_sensor.balcony_door_contact') }}
+        state: "{{ states('binary_sensor.balcony_door_contact') }}"
