@@ -1,15 +1,7 @@
 - platform: statistics
-  unique_id: balcony_door_avg10_v2
-  name: 'Balcony door: Average10 v2'
-  entity_id: binary_sensor.balcony_door_contact
+  unique_id: balcony_door_avg10
+  name: 'Balcony door: 10 minute average'
+  entity_id: sensor.balcony_door_every_minute_report
   state_characteristic: average_step
   max_age:
     minutes: 10
-
-
-- platform: filter
-  name: "Balcony door: Moving Average10"
-  entity_id: binary_sensor.balcony_door_contact
-  filters:
-    - filter: time_simple_moving_average
-      window_size: "00:10:00"
