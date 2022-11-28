@@ -6,7 +6,7 @@
   max_age:
     minutes: 10
 
- platform: average
+- platform: average
   name: 'Balcony door: 10 minute average v2'
   unique_id: unica_power_avg10_v3
   entities:
