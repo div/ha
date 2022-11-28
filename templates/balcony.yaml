@@ -7,12 +7,24 @@
     #   minutes: 10
     state: "{{ states('sensor.balcony_door_avg10') | float(0) >= 0.5 }}"
 
+# - trigger:
+#     - platform: time_pattern
+#       # This will update every night
+#       hours: 0
+#       minutes: 0
+#   sensor:
+#     # Keep track how many days have past since a date
+#     - name: "Not smoking"
+#       state: '{{ ( ( as_timestamp(now()) - as_timestamp(strptime("06.07.2018", "%d.%m.%Y")) ) / 86400 ) | round(default=0) }}'
+#       unit_of_measurement: "Days"
 
 - trigger:
-  - platform: time_pattern
+    - platform: time_pattern
     # This will update every 1 min
-    minutes: "/1"
-    sensor:
-      - name: "Balcony door every minute report"
-        unique_id: balcony_door_every_minute_report
-        state: "{{ states('binary_sensor.balcony_door_contact') }}"
+      minutes: "/1"
+  sensor:
+    - name: "Balcony door every minute report"
+      unique_id: balcony_door_every_minute_report
+      state: "{{ states('binary_sensor.balcony_door_contact') }}"
+
+
