@@ -5,3 +5,11 @@
   state_characteristic: average_step
   max_age:
     minutes: 10
+
+ platform: average
+  name: 'Balcony door: 10 minute average v2'
+  unique_id: unica_power_avg10_v3
+  entities:
+    - sensor.balcony_door_every_minute_report
+  duration:
+    minutes: 10
