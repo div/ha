@@ -1,7 +1,7 @@
   - platform: generic_thermostat
     name: Heater
     heater: switch.heater_switch
-    target_sensor: sensor.average_temperature
+    target_sensor: sensor.living_room_temperature
     min_temp: 16
     max_temp: 22
     cold_tolerance: 0.5
