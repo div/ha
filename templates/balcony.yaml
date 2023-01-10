@@ -5,7 +5,7 @@
     #   minutes: 1
     # delay_on:
     #   minutes: 10
-    state: "{{ states('sensor.balcony_door_avg10') | float(0) >= 0.5 }}"
+    state: "{{ states('sensor.balcony_door_avg_v1') | float(0) >= 0.5 }}"
 
 # - trigger:
 #     - platform: time_pattern
@@ -25,6 +25,5 @@
   sensor:
     - name: "Balcony door every minute report"
       unique_id: balcony_door_every_minute_report
-      state: "{{ states('binary_sensor.balcony_door_contact') }}"
-
+      state: "{{ is_state('binary_sensor.balcony_door_contact', 'on') | abs }}"
 

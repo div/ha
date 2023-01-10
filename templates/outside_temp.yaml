@@ -1,0 +1,4 @@
+- sensor:
+    unique_id: weather_forecast_temperature
+    name: "Outside temperature from weather forecast"
+    state: "{{ state_attr('weather.home', 'temperature') }}"
