@@ -1,15 +1,7 @@
 - platform: statistics
-  unique_id: balcony_door_avg10
-  name: 'Balcony door: 10 minute average'
+  unique_id: balcony_door_avg_v1
+  name: 'Balcony door: 10 minute average v1'
   entity_id: sensor.balcony_door_every_minute_report
   state_characteristic: average_step
   max_age:
-    minutes: 10
-
-- platform: average
-  name: 'Balcony door: 10 minute average v2'
-  unique_id: unica_power_avg10_v3
-  entities:
-    - sensor.balcony_door_every_minute_report
-  duration:
     minutes: 10
