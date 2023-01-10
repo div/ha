@@ -1,48 +1,32 @@
-# ##### Overrider
+##### Overrider
 
-# - id: heating_override_disable_timer
-#   alias: Heating override disable timers when overriding
-#   trigger:
-#   - platform: state
-#     entity_id: 'binary_sensor.balcony_door_is_open_for_most_of_the_time_recently'
-#     from: 'off'
-#     to: 'on'
-#   action:
-#   # - service: input_datetime.set_datetime
-#   #   entity_id: input_datetime.heating_override_until
-#   #   data:
-#   #     datetime: "{{ (as_timestamp(now()) + 3600 | float(default=0)) | timestamp_custom('%Y-%m-%d %H:%M:%S') }}"
-#   - service: input_boolean.turn_off
-#     data:
-#       entity_id: 'input_boolean.heating_timer_switch'
-#   - service: climate.set_temperature
-#     data_template:
-#       entity_id: climate.heater
-#       temperature: 10
+- id: open_windows_disable_timer
+  alias: Open windows disable timers
+  trigger:
+  - platform: state
+    entity_id: 'binary_sensor.balcony_door_is_open_for_most_of_the_time_recently'
+    from: 'off'
+    to: 'on'
+  action:
+  - service: input_boolean.turn_off
+    data:
+      entity_id: 'input_boolean.heating_timer_switch'
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.heater
+      temperature: 10
 
-# - id: heating_override_enable_timer
-#   alias: Heating override done enable timers
-#   trigger:
-#   - platform: state
-#     entity_id: 'binary_sensor.balcony_door_is_open_for_most_of_the_time_recently'
-#     from: 'on'
-#     to: 'off'
-#   action:
-#   - service: input_boolean.turn_on
-#     data:
-#       entity_id: 'input_boolean.heating_timer_switch'
-
-# # - id: heating_override_disable_overide_with_timerswitch
-# #   alias: Heating override disable when enable timers
-# #   trigger:
-# #   - platform: state
-# #     entity_id: 'input_boolean.heating_timer_switch'
-# #     from: 'off'
-# #     to: 'on'
-# #   action:
-# #   - service: input_boolean.turn_off
-# #     data:
-# #       entity_id: 'input_boolean.heating_override_switch'
+- id: close_windows_enable_timer
+  alias: Open windows done enable timers
+  trigger:
+  - platform: state
+    entity_id: 'binary_sensor.balcony_door_is_open_for_most_of_the_time_recently'
+    from: 'on'
+    to: 'off'
+  action:
+  - service: input_boolean.turn_on
+    data:
+      entity_id: 'input_boolean.heating_timer_switch'
 
 
 
