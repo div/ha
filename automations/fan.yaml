@@ -36,8 +36,6 @@
     - platform: state
       entity_id: input_boolean.occupancy
       to: 'off'
-    - platform: time
-      at: '11:00:00'
   condition:
     condition: and
     conditions:
@@ -47,6 +45,15 @@
       - condition: numeric_state
         entity_id: sensor.bedroom_temperature
         below: 26
+  action:
+    - service: fan.turn_off
+      entity_id: fan.xiaomi_smart_fan
+
+- id: bedroom_fan_off_by_time
+  alias: Bedroom Fan Off by time
+  trigger:
+    - platform: time
+      at: '11:00:00'
   action:
     - service: fan.turn_off
       entity_id: fan.xiaomi_smart_fan
