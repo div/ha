@@ -13,13 +13,10 @@
     conditions:
       - condition: time
         after: '00:00:00'
-        before: '10:00:00'
+        before: '11:00:00'
       - condition: numeric_state
         entity_id: sensor.bedroom_temperature
         above: 26
-      - condition: state
-        entity_id: input_boolean.occupancy
-        state: 'on'
   action:
     - service: fan.set_percentage
       entity_id: fan.xiaomi_smart_fan
@@ -40,18 +37,16 @@
       entity_id: input_boolean.occupancy
       to: 'off'
     - platform: time
-      at: '10:00:00'
+      at: '11:00:00'
   condition:
-    condition: or
+    condition: and
     conditions:
       - condition: time
-        after: '10:00:00'
+        after: '00:00:00'
+        before: '11:00:00'
       - condition: numeric_state
         entity_id: sensor.bedroom_temperature
         below: 26
-      - condition: state
-        entity_id: input_boolean.occupancy
-        state: 'off'
   action:
     - service: fan.turn_off
       entity_id: fan.xiaomi_smart_fan
