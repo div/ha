@@ -23,9 +23,9 @@
       data:
         percentage: >
           {% set temp = states('sensor.bedroom_temperature') | float %}
-          {% if temp < 28 %} 25
-          {% elif temp < 30 %} 50
-          {% else %} 75
+          {% if temp < 28 %} 50
+          {% elif temp < 30 %} 75
+          {% else %} 100
           {% endif %}
 
 - id: bedroom_fan_off
