@@ -1,6 +1,14 @@
 ##### average custom component https://github.com/Limych/ha-average
-- platform: average
-  name: 'Average temperature'
-  unique_id: average_home_temperature
-  entities:
-    - sensor.living_room_temperature
+# - platform: average
+#   name: 'Average temperature'
+#   unique_id: average_home_temperature
+#   entities:
+#     - sensor.living_room_temperature
+
+# - platform: statistics
+#     name: "Average temperature"
+#     unique_id: average_home_temperature
+#     entity_id: sensor.bathroom_humidity
+#     state_characteristic: mean
+#     max_age:
+#       hours: 24
